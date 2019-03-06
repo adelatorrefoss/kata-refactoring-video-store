@@ -18,10 +18,7 @@ public class Rental {
     private int daysRented;
 
     double amount() {
-        Movie movie = this.getMovie();
-        double amount = 0;
-        amount = movie.getAmount(getDaysRented());
-        return amount;
+        return movie.getAmount(getDaysRented());
     }
 
     int frequentPoints() {
