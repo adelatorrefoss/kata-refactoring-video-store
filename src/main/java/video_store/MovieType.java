@@ -1,12 +1,16 @@
 package video_store;
 
 public class MovieType {
+    public static final int CHILDRENS = 2;
+    public static final int REGULAR = 0;
+    public static final int NEW_RELEASE = 1;
+
     public static MovieType create(int priceCode) {
-        if (priceCode == Movie.NEW_RELEASE) {
+        if (priceCode == NEW_RELEASE) {
             return new NewReleaseMovieType();
-        } else if (priceCode == Movie.REGULAR) {
+        } else if (priceCode == REGULAR) {
             return new RegularMovieType();
-        } else if (priceCode == Movie.CHILDRENS) {
+        } else if (priceCode == CHILDRENS) {
             return new ChildrenMovieType();
         }
 

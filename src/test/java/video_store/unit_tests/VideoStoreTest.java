@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import video_store.Customer;
 import video_store.Movie;
+import video_store.MovieType;
 import video_store.Rental;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -19,7 +20,7 @@ public class VideoStoreTest {
 
     @Test
     public void testSingleNewReleaseStatement() {
-        customer.addRental(new Rental(new Movie("The Cell", Movie.NEW_RELEASE), 3));
+        customer.addRental(new Rental(new Movie("The Cell", MovieType.NEW_RELEASE), 3));
 
         assertThat(
             customer.statement(),
@@ -28,8 +29,8 @@ public class VideoStoreTest {
 
     @Test
     public void testDualNewReleaseStatement() {
-        customer.addRental(new Rental(new Movie("The Cell", Movie.NEW_RELEASE), 3));
-        customer.addRental(new Rental(new Movie("The Tigger Movie", Movie.NEW_RELEASE), 3));
+        customer.addRental(new Rental(new Movie("The Cell", MovieType.NEW_RELEASE), 3));
+        customer.addRental(new Rental(new Movie("The Tigger Movie", MovieType.NEW_RELEASE), 3));
 
         assertThat(
             customer.statement(),
@@ -38,7 +39,7 @@ public class VideoStoreTest {
 
     @Test
     public void testSingleChildrensStatement() {
-        customer.addRental(new Rental(new Movie("The Tigger Movie", Movie.CHILDRENS), 3));
+        customer.addRental(new Rental(new Movie("The Tigger Movie", MovieType.CHILDRENS), 3));
 
         assertThat(
             customer.statement(),
@@ -47,7 +48,7 @@ public class VideoStoreTest {
 
     @Test
     public void testSingleChildrensStatementRentedMoreThanThreeDaysAgo() {
-        customer.addRental(new Rental(new Movie("The Tigger Movie", Movie.CHILDRENS), 4));
+        customer.addRental(new Rental(new Movie("The Tigger Movie", MovieType.CHILDRENS), 4));
 
         assertThat(
             customer.statement(),
@@ -56,9 +57,9 @@ public class VideoStoreTest {
 
     @Test
     public void testMultipleRegularStatement() {
-        customer.addRental(new Rental(new Movie("Plan 9 from Outer Space", Movie.REGULAR), 1));
-        customer.addRental(new Rental(new Movie("8 1/2", Movie.REGULAR), 2));
-        customer.addRental(new Rental(new Movie("Eraserhead", Movie.REGULAR), 3));
+        customer.addRental(new Rental(new Movie("Plan 9 from Outer Space", MovieType.REGULAR), 1));
+        customer.addRental(new Rental(new Movie("8 1/2", MovieType.REGULAR), 2));
+        customer.addRental(new Rental(new Movie("Eraserhead", MovieType.REGULAR), 3));
 
         assertThat(
             customer.statement(),
