@@ -23,11 +23,20 @@ public class MovieType {
         return 0;
     }
 
+    public int getPriceCode() {
+        return 0;
+    }
+
     private static class NewReleaseMovieType extends MovieType {
 
         @Override
         double getAmount(int daysRented) {
             return daysRented * 3;
+        }
+
+        @Override
+        public int getPriceCode() {
+            return MovieType.NEW_RELEASE;
         }
     }
 
@@ -40,6 +49,11 @@ public class MovieType {
             return amount;
         }
 
+        @Override
+        public int getPriceCode() {
+            return MovieType.REGULAR;
+        }
+
     }
 
     private static class ChildrenMovieType extends MovieType {
@@ -50,6 +64,11 @@ public class MovieType {
             if (daysRented > 3)
                 amount += (daysRented - 3) * 1.5;
             return amount;
+        }
+
+        @Override
+        public int getPriceCode() {
+            return MovieType.CHILDRENS;
         }
     }
 }

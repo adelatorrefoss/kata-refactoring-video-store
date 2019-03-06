@@ -1,7 +1,7 @@
 package video_store;
 
 public class Movie {
-    private final MovieType type;
+    private MovieType type;
     private String title;
     private int priceCode;
 
@@ -12,11 +12,11 @@ public class Movie {
     }
 
     public int getPriceCode() {
-        return priceCode;
+        return type.getPriceCode();
     }
 
     public void setPriceCode(int code) {
-        priceCode = code;
+        this.type = MovieType.create(code);
     }
 
     public String getTitle() {
