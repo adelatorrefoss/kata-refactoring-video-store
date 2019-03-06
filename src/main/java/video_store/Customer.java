@@ -29,7 +29,7 @@ public class Customer {
             Movie movie = each.getMovie();
             double thisAmount = each.amount(movie);
 
-            int fp = frequentPoints(each, movie);
+            int fp = each.frequentPoints(movie);
 
             frequentRenterPoints += fp;
             result += "\t" + movie.getTitle() + "\t"
@@ -42,15 +42,6 @@ public class Customer {
         result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points\n";
 
         return result;
-    }
-
-    private int frequentPoints(Rental each, Movie movie) {
-        int fp = 1;
-
-        if (movie.getPriceCode() == Movie.NEW_RELEASE
-                && each.getDaysRented() > 1)
-            fp += 1;
-        return fp;
     }
 
 
