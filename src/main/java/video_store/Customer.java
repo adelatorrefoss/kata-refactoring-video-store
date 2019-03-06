@@ -1,7 +1,7 @@
 package video_store;
 
-import java.util.Vector;
 import java.util.Enumeration;
+import java.util.Vector;
 
 public class Customer {
     public Customer(String name) {
@@ -47,11 +47,11 @@ public class Customer {
             frequentRenterPoints++;
 
             if (movie.getPriceCode() == Movie.NEW_RELEASE
-                && each.getDaysRented() > 1)
+                    && each.getDaysRented() > 1)
                 frequentRenterPoints++;
 
             result += "\t" + movie.getTitle() + "\t"
-                + String.valueOf(thisAmount) + "\n";
+                    + String.valueOf(thisAmount) + "\n";
             totalAmount += thisAmount;
 
         }
