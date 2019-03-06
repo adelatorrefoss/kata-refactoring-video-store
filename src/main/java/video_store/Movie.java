@@ -27,8 +27,12 @@ public class Movie {
         return title;
     }
 
-    double getRegularAmount(int daysRented, Rental rental) {
-        return type.getAmount(daysRented, rental);
+    double getRegularAmount(int daysRented) {
+        return type.getAmount(daysRented);
+    }
+
+    double getNewReleaseAmount(int daysRented) {
+        return type.getAmount(daysRented);
     }
 
 }

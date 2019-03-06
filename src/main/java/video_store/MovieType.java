@@ -13,20 +13,26 @@ public class MovieType {
     }
 
 
-    double getAmount(int daysRented, Rental rental) {
+    double getAmount(int daysRented) {
         return 0;
     }
 
     private static class NewReleaseMovieType extends MovieType {
 
+        @Override
+        double getAmount(int daysRented) {
+            return daysRented * 3;
+        }
     }
 
     private static class RegularMovieType extends MovieType {
-        double getAmount(int daysRented, Rental rental) {
+        @Override
+        double getAmount(int daysRented) {
             double amount = 2;
-            if (rental.getDaysRented() > 2)
+            if (daysRented > 2)
                 amount += (daysRented - 2) * 1.5;
             return amount;
         }
+
     }
 }
