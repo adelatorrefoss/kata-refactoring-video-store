@@ -6,6 +6,8 @@ public class MovieType {
             return new NewReleaseMovieType();
         } else if (priceCode == Movie.REGULAR) {
             return new RegularMovieType();
+        } else if (priceCode == Movie.CHILDRENS) {
+            return new ChildrenMovieType();
         }
 
 
@@ -34,5 +36,16 @@ public class MovieType {
             return amount;
         }
 
+    }
+
+    private static class ChildrenMovieType extends MovieType {
+        @Override
+        double getAmount(int daysRented) {
+            double amount;
+            amount = 1.5;
+            if (daysRented > 3)
+                amount += (daysRented - 3) * 1.5;
+            return amount;
+        }
     }
 }
