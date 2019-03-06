@@ -29,12 +29,13 @@ public class Customer {
             Movie movie = each.getMovie();
             double thisAmount = amount(each, movie);
 
-            frequentRenterPoints++;
+            int fp = 1;
 
             if (movie.getPriceCode() == Movie.NEW_RELEASE
                     && each.getDaysRented() > 1)
-                frequentRenterPoints++;
+                fp += 1;
 
+            frequentRenterPoints += fp;
             result += "\t" + movie.getTitle() + "\t"
                     + String.valueOf(thisAmount) + "\n";
             totalAmount += thisAmount;
