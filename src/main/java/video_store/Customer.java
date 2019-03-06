@@ -23,13 +23,13 @@ public class Customer {
         String result = "Rental Record for " + getName() + "\n";
 
         while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
+            Rental rental = (Rental) rentals.nextElement();
 
             // determines the amount for each line
-            Movie movie = each.getMovie();
-            double thisAmount = each.amount(movie);
+            Movie movie = rental.getMovie();
+            double thisAmount = rental.amount(movie);
 
-            int fp = each.frequentPoints(movie);
+            int fp = rental.frequentPoints(movie);
 
             frequentRenterPoints += fp;
             result += "\t" + movie.getTitle() + "\t"
