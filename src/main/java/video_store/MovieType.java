@@ -1,6 +1,6 @@
 package video_store;
 
-public class MovieType {
+public abstract class MovieType {
     public static final int CHILDRENS = 2;
     public static final int REGULAR = 0;
     public static final int NEW_RELEASE = 1;
@@ -14,21 +14,14 @@ public class MovieType {
             return new ChildrenMovieType();
         }
 
-        return null;
+        throw new RuntimeException();
     }
 
+    abstract double getAmount(int daysRented);
 
-    double getAmount(int daysRented) {
-        return 0;
-    }
+    abstract public int getPriceCode();
 
-    public int getPriceCode() {
-        return 0;
-    }
-
-    int getFrequentPoints(int daysRented) {
-        return 0;
-    }
+    abstract int getFrequentPoints(int daysRented);
 
     private static class NewReleaseMovieType extends MovieType {
 
