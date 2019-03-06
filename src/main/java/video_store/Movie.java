@@ -30,9 +30,4 @@ public class Movie {
     double getRegularAmount(int daysRented) {
         return type.getAmount(daysRented);
     }
-
-    double getNewReleaseAmount(int daysRented) {
-        return type.getAmount(daysRented);
-    }
-
 }

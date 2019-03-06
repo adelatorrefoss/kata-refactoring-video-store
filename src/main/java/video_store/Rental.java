@@ -25,7 +25,7 @@ public class Rental {
                 amount = movie.getRegularAmount(getDaysRented());
                 break;
             case Movie.NEW_RELEASE:
-                amount = movie.getNewReleaseAmount(getDaysRented());
+                amount = movie.getRegularAmount(getDaysRented());
                 break;
             case Movie.CHILDRENS:
                 amount = 1.5;
