@@ -24,30 +24,30 @@ public class Customer {
 
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
-            Rental each = (Rental) rentals.nextElement();
+            Rental rental = (Rental) rentals.nextElement();
 
             // determines the amount for each line
-            Movie movie = each.getMovie();
+            Movie movie = rental.getMovie();
             switch (movie.getPriceCode()) {
                 case Movie.REGULAR:
                     thisAmount += 2;
-                    if (each.getDaysRented() > 2)
-                        thisAmount += (each.getDaysRented() - 2) * 1.5;
+                    if (rental.getDaysRented() > 2)
+                        thisAmount += (rental.getDaysRented() - 2) * 1.5;
                     break;
                 case Movie.NEW_RELEASE:
-                    thisAmount += each.getDaysRented() * 3;
+                    thisAmount += rental.getDaysRented() * 3;
                     break;
                 case Movie.CHILDRENS:
                     thisAmount += 1.5;
-                    if (each.getDaysRented() > 3)
-                        thisAmount += (each.getDaysRented() - 3) * 1.5;
+                    if (rental.getDaysRented() > 3)
+                        thisAmount += (rental.getDaysRented() - 3) * 1.5;
                     break;
             }
 
             frequentRenterPoints++;
 
             if (movie.getPriceCode() == Movie.NEW_RELEASE
-                    && each.getDaysRented() > 1)
+                    && rental.getDaysRented() > 1)
                 frequentRenterPoints++;
 
             result += "\t" + movie.getTitle() + "\t"
