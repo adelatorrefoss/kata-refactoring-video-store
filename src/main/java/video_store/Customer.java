@@ -27,9 +27,9 @@ public class Customer {
 
             // determines the amount for each line
             Movie movie = rental.getMovie();
-            double thisAmount = rental.amount(movie);
+            double thisAmount = rental.amount();
 
-            int fp = rental.frequentPoints(movie);
+            int fp = rental.frequentPoints();
 
             frequentRenterPoints += fp;
             result += "\t" + movie.getTitle() + "\t"

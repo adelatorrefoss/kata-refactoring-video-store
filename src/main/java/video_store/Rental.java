@@ -17,7 +17,8 @@ public class Rental {
     private Movie movie;
     private int daysRented;
 
-    double amount(Movie movie) {
+    double amount() {
+        Movie movie = this.getMovie();
         double amount = 0;
         switch (movie.getPriceCode()) {
             case Movie.REGULAR:
@@ -37,7 +38,8 @@ public class Rental {
         return amount;
     }
 
-    int frequentPoints(Movie movie) {
+    int frequentPoints() {
+        Movie movie = this.getMovie();
         int frequentPoints = 1;
 
         if (movie.getPriceCode() == Movie.NEW_RELEASE
