@@ -22,10 +22,9 @@ public class Rental {
     }
 
     int frequentPoints() {
-        Movie movie = this.getMovie();
         int frequentPoints = 1;
 
-        if (movie.getPriceCode() == MovieType.NEW_RELEASE
+        if (this.getMovie().getPriceCode() == MovieType.NEW_RELEASE
                 && getDaysRented() > 1)
             frequentPoints += 1;
         return frequentPoints;
