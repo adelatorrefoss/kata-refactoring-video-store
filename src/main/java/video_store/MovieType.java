@@ -47,8 +47,8 @@ public class MovieType {
         int getFrequentPoints2(int daysRented, Movie movie) {
             int frequentPoints = 1;
 
-            if (movie.getPriceCode() == NEW_RELEASE
-                    && daysRented > 1)
+            if (
+                    daysRented > 1)
                 frequentPoints += 1;
             return frequentPoints;
         }
@@ -72,9 +72,7 @@ public class MovieType {
         int getFrequentPoints2(int daysRented, Movie movie) {
             int frequentPoints = 1;
 
-            if (movie.getPriceCode() == NEW_RELEASE
-                    && daysRented > 1)
-                frequentPoints += 1;
+
             return frequentPoints;
         }
 
@@ -99,9 +97,7 @@ public class MovieType {
         int getFrequentPoints2(int daysRented, Movie movie) {
             int frequentPoints = 1;
 
-            if (movie.getPriceCode() == NEW_RELEASE
-                    && daysRented > 1)
-                frequentPoints += 1;
+
             return frequentPoints;
         }
     }
