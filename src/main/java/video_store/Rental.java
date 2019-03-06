@@ -38,11 +38,11 @@ public class Rental {
     }
 
     int frequentPoints(Movie movie) {
-        int fp = 1;
+        int frequentPoints = 1;
 
         if (movie.getPriceCode() == Movie.NEW_RELEASE
                 && getDaysRented() > 1)
-            fp += 1;
-        return fp;
+            frequentPoints += 1;
+        return frequentPoints;
     }
 }
