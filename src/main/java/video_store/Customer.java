@@ -27,7 +27,7 @@ public class Customer {
 
             // determines the amount for each line
             Movie movie = each.getMovie();
-            double thisAmount = amount(each, movie);
+            double thisAmount = each.amount(movie);
 
             int fp = frequentPoints(each, movie);
 
@@ -51,26 +51,6 @@ public class Customer {
                 && each.getDaysRented() > 1)
             fp += 1;
         return fp;
-    }
-
-    private double amount(Rental rental, Movie movie) {
-        double amount = 0;
-        switch (movie.getPriceCode()) {
-            case Movie.REGULAR:
-                amount += 2;
-                if (rental.getDaysRented() > 2)
-                    amount += (rental.getDaysRented() - 2) * 1.5;
-                break;
-            case Movie.NEW_RELEASE:
-                amount += rental.getDaysRented() * 3;
-                break;
-            case Movie.CHILDRENS:
-                amount += 1.5;
-                if (rental.getDaysRented() > 3)
-                    amount += (rental.getDaysRented() - 3) * 1.5;
-                break;
-        }
-        return amount;
     }
 
 
