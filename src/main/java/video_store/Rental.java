@@ -22,10 +22,10 @@ public class Rental {
         double amount = 0;
         switch (movie.getPriceCode()) {
             case Movie.REGULAR:
-                amount = movie.getRegularAmount(getDaysRented());
+                amount = movie.getAmount(getDaysRented());
                 break;
             case Movie.NEW_RELEASE:
-                amount = movie.getRegularAmount(getDaysRented());
+                amount = movie.getAmount(getDaysRented());
                 break;
             case Movie.CHILDRENS:
                 amount = 1.5;
