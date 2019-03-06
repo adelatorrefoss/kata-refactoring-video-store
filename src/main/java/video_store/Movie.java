@@ -28,11 +28,7 @@ public class Movie {
     }
 
     int getFrequentPoints(int daysRented) {
-        int frequentPoints = 1;
-
-        if (getPriceCode() == MovieType.NEW_RELEASE
-                && daysRented > 1)
-            frequentPoints += 1;
-        return frequentPoints;
+        return type.getFrequentPoints2(daysRented, this);
     }
+
 }

@@ -27,6 +27,10 @@ public class MovieType {
         return 0;
     }
 
+    int getFrequentPoints2(int daysRented, Movie movie) {
+        return 0;
+    }
+
     private static class NewReleaseMovieType extends MovieType {
 
         @Override
@@ -37,6 +41,16 @@ public class MovieType {
         @Override
         public int getPriceCode() {
             return MovieType.NEW_RELEASE;
+        }
+
+        @Override
+        int getFrequentPoints2(int daysRented, Movie movie) {
+            int frequentPoints = 1;
+
+            if (movie.getPriceCode() == NEW_RELEASE
+                    && daysRented > 1)
+                frequentPoints += 1;
+            return frequentPoints;
         }
     }
 
@@ -54,6 +68,16 @@ public class MovieType {
             return MovieType.REGULAR;
         }
 
+        @Override
+        int getFrequentPoints2(int daysRented, Movie movie) {
+            int frequentPoints = 1;
+
+            if (movie.getPriceCode() == NEW_RELEASE
+                    && daysRented > 1)
+                frequentPoints += 1;
+            return frequentPoints;
+        }
+
     }
 
     private static class ChildrenMovieType extends MovieType {
@@ -69,6 +93,16 @@ public class MovieType {
         @Override
         public int getPriceCode() {
             return MovieType.CHILDRENS;
+        }
+
+        @Override
+        int getFrequentPoints2(int daysRented, Movie movie) {
+            int frequentPoints = 1;
+
+            if (movie.getPriceCode() == NEW_RELEASE
+                    && daysRented > 1)
+                frequentPoints += 1;
+            return frequentPoints;
         }
     }
 }
