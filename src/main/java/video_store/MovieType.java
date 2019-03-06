@@ -14,7 +14,6 @@ public class MovieType {
             return new ChildrenMovieType();
         }
 
-
         return null;
     }
 
@@ -27,7 +26,7 @@ public class MovieType {
         return 0;
     }
 
-    int getFrequentPoints2(int daysRented, Movie movie) {
+    int getFrequentPoints(int daysRented) {
         return 0;
     }
 
@@ -44,7 +43,7 @@ public class MovieType {
         }
 
         @Override
-        int getFrequentPoints2(int daysRented, Movie movie) {
+        int getFrequentPoints(int daysRented) {
             int frequentPoints = 1;
 
             if (
@@ -69,11 +68,8 @@ public class MovieType {
         }
 
         @Override
-        int getFrequentPoints2(int daysRented, Movie movie) {
-            int frequentPoints = 1;
-
-
-            return frequentPoints;
+        int getFrequentPoints(int daysRented) {
+            return 1;
         }
 
     }
@@ -94,11 +90,8 @@ public class MovieType {
         }
 
         @Override
-        int getFrequentPoints2(int daysRented, Movie movie) {
-            int frequentPoints = 1;
-
-
-            return frequentPoints;
+        int getFrequentPoints(int daysRented) {
+            return 1;
         }
     }
 }
