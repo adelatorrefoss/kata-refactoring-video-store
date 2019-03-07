@@ -9,10 +9,6 @@ public class Movie {
         this.type = MovieType.create(priceCode);
     }
 
-    public void setPriceCode(int code) {
-        this.type = MovieType.create(code);
-    }
-
     public String getTitle() {
         return title;
     }
@@ -24,5 +20,4 @@ public class Movie {
     int getFrequentPoints(int daysRented) {
         return type.getFrequentPoints(daysRented);
     }
-
 }
