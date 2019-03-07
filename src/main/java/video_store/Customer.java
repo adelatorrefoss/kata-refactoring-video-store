@@ -26,16 +26,13 @@ public class Customer {
             Rental rental = (Rental) rentals.nextElement();
 
             // determines the amount for each line
-            Movie movie = rental.getMovie();
             double thisAmount = rental.amount();
 
-            int fp = rental.frequentPoints();
-
-            frequentRenterPoints += fp;
-            result += "\t" + movie.getTitle() + "\t"
+            result += "\t" + rental.getTitle() + "\t"
                     + String.valueOf(thisAmount) + "\n";
-            totalAmount += thisAmount;
 
+            frequentRenterPoints += rental.frequentPoints();
+            totalAmount += thisAmount;
         }
 
         result += "You owed " + String.valueOf(totalAmount) + "\n";
